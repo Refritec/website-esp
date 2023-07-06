@@ -1,0 +1,40 @@
+.containerGrafico {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  width: 130%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card p {
+  font-weight: 700;
+}
+
+.card .sht {
+  color: #342f83;
+}
+
+.card .ds1 {
+  color: #91363a;
+}
+
+.card .ds2 {
+  color: #60862e;
+}
+
+.card .hum {
+  color: #f2a900;
+}
