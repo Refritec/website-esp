@@ -3,17 +3,24 @@
   margin: 0;
   box-sizing: border-box;
 }
-@media screen and (min-width: 1000px) {
+
+body {
+  display: flex;
+  align-items: flex-start;
+  padding: 2vh 2vw;
+  width: 100%;
+  background-image: url("https://ik.imagekit.io/dwoymzyld/RefritecBack.png?updatedAt=1688563540750");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
   body {
-    display: flex;
-    align-items: flex-start;
-    padding: 2vh 2vw;
-    width: 100%;
     background-image: url("https://ik.imagekit.io/dwoymzyld/RefritecBack.png?updatedAt=1688563540750");
     background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: top;
-    background-size: 100vw 100vh;
+    background-size: 800px 100vh;
+    background-position-x: left;
   }
 }
 
