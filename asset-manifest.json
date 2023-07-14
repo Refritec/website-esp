@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/website-esp/static/css/main.e7102416.css",
+    "main.js": "/website-esp/static/js/main.80c0928d.js",
+    "index.html": "/website-esp/index.html",
+    "main.e7102416.css.map": "/website-esp/static/css/main.e7102416.css.map",
+    "main.80c0928d.js.map": "/website-esp/static/js/main.80c0928d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7102416.css",
+    "static/js/main.80c0928d.js"
+  ]
+}
