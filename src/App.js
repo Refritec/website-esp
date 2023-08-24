@@ -1,34 +1,26 @@
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useEffect, useState } from "react";
+import { collection, query, onSnapshot } from "firebase/firestore";
 
 import { GraficoTemp } from "./components/GraficoTemp";
 import { GraficoHum } from "./components/GraficoHum";
 
-import axios from "axios";
+import { db } from "./service/getData";
 
 function App() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://api-projeto-esp.vercel.app/dados"
-        );
-        console.log(response.data.dados);
-        setData(response.data.dados);
-      } catch (error) {
-        console.log("Erro ao buscar os dados:", error);
-      }
-    };
+    const q = query(collection(db, "dados"));
+    const subscribe = onSnapshot(q, (querySnapshot) => {
+      const dados = [];
+      querySnapshot.forEach((doc) => {
+        dados.push(doc.data());
+      });
+      if (dados.lenght > 0) setData(dados);
+    });
 
-    fetchData(); // Faz a primeira chamada imediatamente
-
-    const interval = setInterval(fetchData, 60000); // Faz a chamada a cada 1 minuto (60000 ms)
-
-    return () => {
-      clearInterval(interval); // Limpa o intervalo quando o componente for desmontado
-    };
+    return () => subscribe();
   }, []);
 
   return (
