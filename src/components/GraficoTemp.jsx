@@ -21,7 +21,7 @@ export function GraficoTemp({ dados }) {
 
   return (
     <div className="containerGrafico">
-      <LineChart width={600} height={300} data={dados}>
+      <LineChart width={600} height={200} data={dados}>
         <Line type="monotone" dataKey="temp_sht30" stroke="#342f83" />
         <Line type="monotone" dataKey="temp_ds18b20_1" stroke="#91363a" />
         <Line type="monotone" dataKey="temp_ds18b20_2" stroke="#60862e" />
@@ -39,15 +39,17 @@ export function GraficoTemp({ dados }) {
       <div className="cards">
         <div className="card">
           <h4>SHT30</h4>
-          <p className="sht">{dados && dados[dados.length - 1].temp_sht30} C°</p>
-        </div>
-        <div className="card">
+          <p className="sht">
+            {dados && dados[dados.length - 1].temp_sht30} C°
+          </p>
           <h4>DS18B20 1</h4>
-          <p className="ds1">{dados && dados[dados.length - 1].temp_ds18b20_1} C°</p>
-        </div>
-        <div className="card">
+          <p className="ds1">
+            {dados && dados[dados.length - 1].temp_ds18b20_1} C°
+          </p>
           <h4>DS18B20 2</h4>
-          <p className="ds2">{dados && dados[dados.length - 1].temp_ds18b20_2} C°</p>
+          <p className="ds2">
+            {dados && dados[dados.length - 1].temp_ds18b20_2} C°
+          </p>
         </div>
       </div>
     </div>

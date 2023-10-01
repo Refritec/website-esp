@@ -6,22 +6,27 @@ import { GraficoTemp } from "./components/GraficoTemp";
 import { GraficoHum } from "./components/GraficoHum";
 
 import { db } from "./service/getData";
+import { getDados } from "./db/data";
 
 function App() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    const q = query(collection(db, "dados"));
-    const subscribe = onSnapshot(q, (querySnapshot) => {
-      const dados = [];
-      querySnapshot.forEach((doc) => {
-        dados.push(doc.data());
-      });
-      if (dados.lenght > 0) setData(dados);
-    });
-
-    return () => subscribe();
+    let dados = getDados();
+    setData(dados);
   }, []);
+  // useEffect(() => {
+  //   const q = query(collection(db, "dados"));
+  //   const subscribe = onSnapshot(q, (querySnapshot) => {
+  //     const dados = [];
+  //     querySnapshot.forEach((doc) => {
+  //       dados.push(doc.data());
+  //     });
+  //     if (dados.lenght > 0) setData(dados);
+  //   });
+
+  //   return () => subscribe();
+  // }, []);
 
   return (
     <>

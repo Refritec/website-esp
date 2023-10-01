@@ -17,7 +17,7 @@ export function GraficoHum({ dados }) {
 
   return (
     <div className="containerGrafico">
-      <LineChart width={600} height={300} data={dados}>
+      <LineChart width={600} height={200} data={dados}>
         <Line type="monotone" dataKey="humidity_sht30" stroke="#f2a900" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis dataKey="hora">
